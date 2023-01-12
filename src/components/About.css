@@ -1,0 +1,17 @@
+.card:hover i{
+    color: rgb(30 64 175) !important;
+}
+.card:hover h2{
+    color: #4db5ff !important;
+}
+.card:hover p{
+    color: white !important;
+}
+.child-card{
+    transition: transform .5s ease;
+}
+
+.card:hover .child-card{
+    transform: scale(1.1);
+    
+}
