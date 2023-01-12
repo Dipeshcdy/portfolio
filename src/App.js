@@ -2,29 +2,29 @@
 import './App.css';
 
 import {
-  BrowserRouter as Router,
- 
+  HashRouter as Router,
 
-  
+
+
 } from "react-router-dom";
 
 import AnimatedRoute from './components/AnimatedRoute';
-import {Nav} from './components/Nav';
+import { Nav } from './components/Nav';
 
 
 function App() {
 
   return (
     <>
-    
-    
-    
-    <Router>
-    <Nav/>
-    
-    <AnimatedRoute/>
-</Router>
-    {/* 
+
+
+
+      <Router>
+        <Nav />
+
+        <AnimatedRoute />
+      </Router>
+      {/* 
     
     
     <Footer/> */}
