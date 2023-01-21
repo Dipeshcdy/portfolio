@@ -7,6 +7,8 @@ import { FaAward } from 'react-icons/fa'
 import { FiUsers } from 'react-icons/fi'
 import { VscFolderLibrary } from 'react-icons/vsc'
 import './About.css';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 export const About = () => {
   return (
     <section
@@ -34,7 +36,7 @@ export const About = () => {
           <div className=' mx-auto w-[18rem] sm:w-[20rem] md:w-[25rem] '>
             <div className='gradient h-[18rem] sm:-[20rem] md:h-[25rem] w-[100%] aspect-square rounded-[2rem]  '>
               <div className='overflow-hidden rounded-[2rem] rotate-[-10deg] h-[18rem] sm:-[20rem] md:h-[25rem] w-[100%] hover:rotate-0 transition'>
-                <img className='' src={me} alt="" />
+                <LazyLoadImage effect="blur" src={me} alt="" />
               </div>
             </div>
           </div>
