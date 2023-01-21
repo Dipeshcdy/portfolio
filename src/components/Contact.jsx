@@ -1,13 +1,24 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { Message } from './Message';
 
 export const Contact = () => {
+  const[fade, setFade]=useState('hidden');
+
+ const fade_out=()=>{
+  setFade('block fade-out')
+ }
+const message = ()=>{
+  setFade('block');
+ setInterval(fade_out,3000);
+}
   const form=useRef();
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs.sendForm('service_7q4mdwh', 'template_33ltz7q', form.current, 'oT_jbbBt3bNxDyNXx')
     e.target.reset();
+    message();
       // .then((result) => {
       //     alert(result.text);
       // }, (error) => {
@@ -25,15 +36,16 @@ export const Contact = () => {
         <div className='flex mt-10'>
           <div className='w-[80%] md:w-[50%] mx-auto'>
           <form ref={form} onSubmit={sendEmail} >
-            <input name='name' type="text" placeholder='Your Full Name' className='px-5 sm:px-10 py-3 sm:py-6 placeholder:text-gray-500 bg-transparent border border-solid border-[#4db5ff] w-full rounded-xl outline-none ' />
-            <input name='email' type="text" placeholder='Your Email' className='sm:mt-6 mt-5 px-5 sm:px-10 py-3 sm:py-6 placeholder:text-gray-500 bg-transparent border border-solid border-[#4db5ff] w-full rounded-xl' />
-            <textarea name='message' type="text" rows={4} placeholder='Your Message' className='sm:mt-6 mt-5 px-5 sm:px-10 py-3 sm:py-6 placeholder:text-gray-500 bg-transparent border border-solid border-[#4db5ff] w-full rounded-xl' />
+            <input name='name' type="text" placeholder='Your Full Name' required className='px-5 sm:px-10 py-3 sm:py-6 placeholder:text-gray-500 bg-transparent border border-solid border-[#4db5ff] w-full rounded-xl outline-none ' />
+            <input name='email' type="text" placeholder='Your Email' required className='sm:mt-6 mt-5 px-5 sm:px-10 py-3 sm:py-6 placeholder:text-gray-500 bg-transparent border border-solid border-[#4db5ff] w-full rounded-xl' />
+            <textarea name='message' type="text" rows={4} placeholder='Your Message' required className='sm:mt-6 mt-5 px-5 sm:px-10 py-3 sm:py-6 placeholder:text-gray-500 bg-transparent border border-solid border-[#4db5ff] w-full rounded-xl' />
             <button type='submit' className='bg-[#4db5ff] px-5 sm:px-10 py-3 sm:py-6 rounded-xl mt-6 text-[#151B8D] hover:bg-transparent hover:border hover:border-solid hover:border-[#4db5ff] hover:text-[#4db5ff]'>
                 Send Message
             </button>
           </form>
           </div>
         </div>
+        <Message fade={fade} />
         {/* <a href="mailto:techdipesh36@gmail.com">send Message</a>
         <a href="https://m.me/profile.php?id=100017930170031">send Message</a>
         <a href="https://web.whatsapp.com/send?phone=+9779807261495">send Message</a> */}

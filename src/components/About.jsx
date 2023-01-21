@@ -1,5 +1,5 @@
-import React from 'react'
 import me from '../assests/my2.jpg'
+import React from 'react'
 import {
   Link
 } from "react-router-dom";
@@ -36,7 +36,7 @@ export const About = () => {
           <div className=' mx-auto w-[18rem] sm:w-[20rem] md:w-[25rem] '>
             <div className='gradient h-[18rem] sm:-[20rem] md:h-[25rem] w-[100%] aspect-square rounded-[2rem]  '>
               <div className='overflow-hidden rounded-[2rem] rotate-[-10deg] h-[18rem] sm:-[20rem] md:h-[25rem] w-[100%] hover:rotate-0 transition'>
-                <LazyLoadImage effect="blur" src={me} alt="" />
+                <LazyLoadImage effect="blur" src={me}  alt="Image Alt" />
               </div>
             </div>
           </div>
