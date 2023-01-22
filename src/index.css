@@ -78,9 +78,5 @@ nav a.active{
 .mytransition{
     transition: transform .6s ease;
 }
-.fade-out{
-    opacity: 0;
-    transition: opacity 1s ease;
-}
 
 
